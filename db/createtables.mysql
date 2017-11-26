@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+	userid INTEGER PRIMARY KEY,
+	name VARCHAR(55) NOT NULL
+);
+
+DROP TABLE IF EXISTS scores;
+
+CREATE TABLE scores (
+	scoreid INTEGER PRIMARY KEY,
+	userid INTEGER NOT NULL,
+	score INTEGER NOT NULL,
+	FOREIGN KEY(userid) REFERENCES users(userid)	
+);
