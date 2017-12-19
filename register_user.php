@@ -8,10 +8,17 @@ try {
 
 	$result = $db->query('SELECT count(*) FROM users');
 
+	$result = $db->query('SELECT count(*) FROM users WHERE ' .
+		' username = ' . $username );
+
+	/*
 	foreach($result as $row)
 	{
 		echo $row[0] . '<br>';
 	}
+	 */
+
+	echo $result;
 
 	echo 'user already exists';
 }
